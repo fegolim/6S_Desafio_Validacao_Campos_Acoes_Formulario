@@ -118,24 +118,25 @@
                 <div class="col">
                   {{observacao}}
                 </div>
+
                 <div class="col">
                   <button type="button" class="btn btn-primary"><a
                       href="/editar/{{id}}"
                       style="color:inherit"
                     >Editar</a></button>
-                  {{!-- <button type="button" class="btn btn-danger"><a href="/excluir/{{id}}" style="color:inherit">Deletar</a></button> --}}
-                  <button
-                    type="button"
-                    class="btn btn-danger"
-                    onclick="excluirConfirm('{{id}}')"
-                  >Excluir</button>
+
+                  <button type="button" class="btn btn-danger"><a
+                      href="/excluir/{{id}}"
+                      style="color:inherit"
+                      onclick="excluirConfirm('{{id}}')"
+                    >Excluir</a></button>
                 </div>
+
                 <script>
                   function excluirConfirm(id) { const confirmacao =
-                  confirm("Você deseja excluir realmente esse registro?"); if
-                  (confirmacao) { // O usuário confirmou a exclusão, você pode
-                  redirecionar para a rota de exclusão window.location.href =
-                  "/excluir/" + id; } else { } }
+                  confirm("Você tem certeza que deseja excluir esse registro?");
+                  if (confirmacao) { window.location.href = "/excluir/" + id; }
+                  }
                 </script>
               </div>
             {{/dataValues}}
